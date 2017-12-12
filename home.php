@@ -71,7 +71,7 @@
 			<p>Código:
 			<input type="text" name="codAst" size="30" value=""</>
 			</p>
-			<p>Nome:
+			<p>Nome2:
 			<input type="text" name="nome" size="30" value=""</>
 			</p>
 			<p>Composição:
