@@ -1,0 +1,261 @@
+@charset "UTF-8";
+
+body {
+	background-image: url(https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_960_720.jpg);
+	background-attachment: fixed;
+	font-family: Arial, sans-serif;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+html {
+    height: 100%
+}
+
+div#interface {
+	width: 1200px;
+	margin: 10px auto 0px auto;
+	padding: 10px;
+	height: 500px;
+	
+	background-color: #000038;
+	border: 1px solid black;
+}
+
+div#fundo_menu {
+	width: 1200px;
+	margin: 0px auto 0px auto;
+	padding: 10px;
+	height: 51px;
+	
+	background-color: #000038;
+	border: 1px solid black;
+}
+
+header#cabecalho {
+	position: absolute;
+	padding-left: 20px;
+	text-align: left;
+	height: 48px;
+	width: 750px;
+	line-height: 50px;
+	top: 19px;
+	
+	border: 1px solid black;
+	color: black;
+	font-size: 20pt;
+	font-family: Corbel;
+	background-color: LightSteelBlue;
+}
+
+div#info button#btnClose {
+	display: inline-block;
+	position: absolute;
+	width: 80px;
+	height: 30px;
+	top: -16px;
+	right: -16px;
+	margin-top: -1px;
+	margin-left: -79px;
+	
+	font-size: 13pt;
+	background-color: LightSteelBlue;
+	border: 1px solid black;
+}
+
+button#btnSelect {
+	position: absolute;
+	width: 125px;
+	height: 45px;
+	top: 50px;
+	left: 50px;
+	
+	color: black;
+	font-size: 20pt;
+	background-color: rgba(180,205,205,0.7);
+	border: 1px solid black;
+}
+button#btnInsert {
+	position: absolute;
+	width: 125px;
+	height: 45px;
+	top: 50px;
+	right: 50px;
+	
+	color: black;
+	font-size: 20pt;
+	background-color: rgba(180,205,205,0.7);
+	border: 1px solid black;
+}
+button#btnUpdate {
+	position: absolute;
+	width: 125px;
+	height: 45px;
+	bottom: 50px;
+	left: 50px;
+	
+	color: black;
+	font-size: 20pt;
+	background-color: rgba(180,205,205,0.7);
+	border: 1px solid black;
+}
+button#btnDelete {
+	position: absolute;
+	width: 125px;
+	height: 45px;
+	bottom: 50px;
+	right: 50px;
+	
+	color: black;
+	font-size: 20pt;
+	background-color: rgba(180,205,205,0.7);
+	border: 1px solid black;
+}
+
+div#info input#chk
+{
+	width: 15px;
+	height: 15px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+div#info div#chkbox {
+	position: absolute;
+	left: 10px;
+	bottom: 10px;
+}
+
+section#comandos {
+	display: none;
+	position: absolute;
+	border: 1px solid black;
+	background-color: white;
+	float: left;
+	width: 400px;
+	height: 244px;
+}
+
+section#opcoes {
+	display: none;
+	position: absolute;
+	border: 1px solid black;
+	background-color: white;
+	float: left;
+	width: 400px;
+	height: 245px;
+	
+	top: 354px;
+}
+
+section#mainSelect {
+	display: none;
+	position: absolute;
+	border: 1px solid black;
+	background-color: white;
+	float: left;
+	width: 790px;
+	height: 497px;
+	
+	left: 490px;
+}
+section#mainInsert {
+	display: none;
+	position: absolute;
+	border: 1px solid black;
+	background-color: white;
+	float: left;
+	width: 750px;
+	height: 457px;
+	
+	padding: 20px;
+	
+	left: 490px;
+}
+section#mainUpdate {
+	display: none;
+	position: absolute;
+	border: 1px solid black;
+	background-color: white;
+	float: left;
+	width: 790px;
+	height: 497px;
+	
+	left: 490px;
+}
+section#mainDelete {
+	display: none;
+	position: absolute;
+	border: 1px solid black;
+	background-color: white;
+	float: left;
+	width: 790px;
+	height: 497px;
+	
+	left: 490px;
+}
+
+nav#menu {
+	display: block;
+}
+
+nav#menu ul {
+	position: absolute;
+	list-style: none;
+	text-transform: uppercase;
+	top: 3px;
+	left: 58%;
+	margin-left: 32px;
+}
+
+nav#menu li {
+	display: inline-block;
+	background-color: LightSteelBlue;
+	padding: 0px;
+	margin: 0px 0px 0px 5px;
+	cursor: pointer;
+	border: 1px solid black;
+	color: black;
+}
+.styled-select {
+	background: none;
+	height: 52px;
+	overflow: hidden;
+	width: 130px;
+}
+.styled-select select {
+	background: none;
+	border: none;
+	font-size: 14px;
+	height: 48px;
+	padding: 5px;
+	width: 130px;
+	font-size: 15pt;
+	font-family: Corbel;
+	text-align: center;
+}
+.styled-select.slate {
+	background: none;
+	background-size: 20px 20px;
+	height: 48px;
+	width: 130px;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+	text-overflow: '';
+	width: 400px;
+	text-align-last: center;
+	text-align: center;
+}
+
+select option
+{
+    background-color: LightSteelBlue;
+	text-align-last: center;
+}
+
+form {
+	display: none;
+}
