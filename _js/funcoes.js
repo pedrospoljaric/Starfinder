@@ -37,6 +37,12 @@ function selectOption(opt)
 		var tab = document.getElementById(selectedTab+"UpdateForm");
 		tab.style.display = 'block';
 	}
+	if (opt == 'Delete')
+	{
+		hideAllForms();
+		var tab = document.getElementById(selectedTab+"DeleteForm");
+		tab.style.display = 'block';
+	}
 }
 
 function hideAllForms()
@@ -54,6 +60,13 @@ function hideAllForms()
 	document.getElementById("organizacaoUpdateForm").style.display = 'none';
 	document.getElementById("regiaoUpdateForm").style.display = 'none';
 	document.getElementById("sistemaUpdateForm").style.display = 'none';
+	
+	document.getElementById("astroDeleteForm").style.display = 'none';
+	document.getElementById("conflitoDeleteForm").style.display = 'none';
+	document.getElementById("especieDeleteForm").style.display = 'none';
+	document.getElementById("organizacaoDeleteForm").style.display = 'none';
+	document.getElementById("regiaoDeleteForm").style.display = 'none';
+	document.getElementById("sistemaDeleteForm").style.display = 'none';
 }
 
 function changeImg()

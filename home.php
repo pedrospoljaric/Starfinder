@@ -273,7 +273,60 @@
 		</form>
 	</section>
 	<section id="mainDelete">
-	Id vem aqui.
+		<form action="_php/deletedInfoAstro.php" method="post" id="astroDeleteForm">
+			<b>Excluir Astro</b>			
+			<p><b>Código:</b>
+			<input type="text" name="codAst" size="30" value=""</>
+			</p>
+			<p>
+				<input type="submit" name="submit" value="Excluir" />
+			</p>
+		</form>
+		<form action="_php/deletedInfoConflito.php" method="post" id="conflitoDeleteForm">
+			<b>Excluir Conflito</b>			
+			<p><b>Código:</b>
+			<input type="text" name="codConf" size="30" value=""</>
+			</p>
+			<p>
+				<input type="submit" name="submit" value="Excluir" />
+			</p>
+		</form>
+		<form action="_php/deletedInfoEspecie.php" method="post" id="especieDeleteForm">
+			<b>Excluir Espécie</b>
+			<p><b>Código:</b>
+			<input type="text" name="codEsp" size="30" value=""</>
+			</p>
+			<p>
+				<input type="submit" name="submit" value="Excluir" />
+			</p>
+		</form>
+		<form action="_php/deletedInfoOrganizacao.php" method="post" id="organizacaoDeleteForm">
+			<b>Excluir Organização</b>			
+			<p><b>Código:</b>
+			<input type="text" name="codOrg" size="30" value=""</>
+			</p>
+			<p>
+				<input type="submit" name="submit" value="Excluir" />
+			</p>
+		</form>
+		<form action="_php/deletedInfoRegiao.php" method="post" id="regiaoDeleteForm">
+			<b>Excluir Região</b>			
+			<p><b>Código:</b>
+			<input type="text" name="codReg" size="30" value=""</>
+			</p>
+			<p>
+				<input type="submit" name="submit" value="Excluir" />
+			</p>
+		</form>
+		<form action="_php/deletedInfoSistema.php" method="post" id="sistemaDeleteForm">
+			<b>Excluir Sistema</b>			
+			<p><b>Código:</b>
+			<input type="text" name="codSis" size="30" value=""</>
+			</p>
+			<p>
+				<input type="submit" name="submit" value="Excluir" />
+			</p>
+		</form>
 	</section>
 	
 </section> 
