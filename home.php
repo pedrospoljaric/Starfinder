@@ -58,12 +58,8 @@
 	</section>
 	
 	<section id="mainSelect">
-		<?php
-		
-		require '_php/getInfoEspecie.php';
-		
-		
-		?>
+		<object type="text/html" data=getSelect() width="790" height="497" id="monica">
+		</object>
 	</section>
 	<section id="mainInsert">
 		<form action="_php/addedInfoAstro.php" method="post" id="astroForm">
@@ -71,7 +67,7 @@
 			<p>Código:
 			<input type="text" name="codAst" size="30" value=""</>
 			</p>
-			<p>Nome2:
+			<p>Nome:
 			<input type="text" name="nome" size="30" value=""</>
 			</p>
 			<p>Composição:
@@ -181,5 +177,8 @@
 	
 </section> 
 </div>
+
+<script src="jquery/jquery.min.js"></script>
+<script src="_js/general.js"></script>
 </body>
 </html>

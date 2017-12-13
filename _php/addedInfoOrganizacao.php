@@ -4,21 +4,13 @@ if (isset($_POST['submit']))
 {
 	$data_missing = array();
 	
-	if (empty($_POST['nome_cientifico']))
+	if (empty($_POST['nome']))
 	{
-		$data_missing[] = 'nome_cientifico';
+		$data_missing[] = 'nome';
 	}
 	else
 	{
-		$nome_cientifico = trim($_POST['nome_cientifico']);
-	}
-	if (empty($_POST['nome_usual']))
-	{
-		$data_missing[] = 'nome_usual';
-	}
-	else
-	{
-		$nome_usual = trim($_POST['nome_usual']);
+		$nome = trim($_POST['nome']);
 	}
 	if (empty($_POST['descricao']))
 	{
@@ -28,16 +20,32 @@ if (isset($_POST['submit']))
 	{
 		$descricao = trim($_POST['descricao']);
 	}
+	if (empty($_POST['dtCriacao']))
+	{
+		$data_missing[] = 'dtCriacao';
+	}
+	else
+	{
+		$dtCriacao = trim($_POST['dtCriacao']);
+	}
+	if (empty($_POST['dtDissolucao']))
+	{
+		$data_missing[] = 'dtDissolucao';
+	}
+	else
+	{
+		$dtDissolucao = trim($_POST['dtDissolucao']);
+	}
 	
 	if (empty($data_missing))
 	{
 		require_once('mysqli_connect.php');
 		
-		$query = "INSERT INTO Especie VALUES (NULL, ?, ?, ?)";
+		$query = "INSERT INTO Organizacao VALUES (NULL, ?, ?, ?, ?)";
 		
 		$stmt = mysqli_prepare($dbc, $query);
 		
-		mysqli_stmt_bind_param($stmt, "sss", $nome_cientifico, $nome_usual, $descricao);
+		mysqli_stmt_bind_param($stmt, "ssss", $nome, $descricao, $dtCriacao, $dtDissolucao);
 		
 		mysqli_stmt_execute($stmt);
 		
@@ -45,7 +53,7 @@ if (isset($_POST['submit']))
 		
 		if ($affected_rows == 1)
 		{
-			echo 'Espécie cadastrada';
+			echo 'Organização cadastrada';
 			
 			mysqli_stmt_close($stmt);
 			
@@ -72,5 +80,5 @@ if (isset($_POST['submit']))
 	}
 }
 
-header('location: ../home.php');
+header('location: ../../home.php');
 ?>

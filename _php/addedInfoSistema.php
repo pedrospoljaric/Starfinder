@@ -4,40 +4,32 @@ if (isset($_POST['submit']))
 {
 	$data_missing = array();
 	
-	if (empty($_POST['nome_cientifico']))
+	if (empty($_POST['codSis']))
 	{
-		$data_missing[] = 'nome_cientifico';
+		$data_missing[] = 'codSis';
 	}
 	else
 	{
-		$nome_cientifico = trim($_POST['nome_cientifico']);
+		$codSis = trim($_POST['codSis']);
 	}
-	if (empty($_POST['nome_usual']))
+	if (empty($_POST['nome']))
 	{
-		$data_missing[] = 'nome_usual';
-	}
-	else
-	{
-		$nome_usual = trim($_POST['nome_usual']);
-	}
-	if (empty($_POST['descricao']))
-	{
-		$data_missing[] = 'descricao';
+		$data_missing[] = 'nome';
 	}
 	else
 	{
-		$descricao = trim($_POST['descricao']);
+		$nome = trim($_POST['nome']);
 	}
 	
 	if (empty($data_missing))
 	{
 		require_once('mysqli_connect.php');
 		
-		$query = "INSERT INTO Especie VALUES (NULL, ?, ?, ?)";
+		$query = "INSERT INTO Sistema VALUES (?, ?)";
 		
 		$stmt = mysqli_prepare($dbc, $query);
 		
-		mysqli_stmt_bind_param($stmt, "sss", $nome_cientifico, $nome_usual, $descricao);
+		mysqli_stmt_bind_param($stmt, "is", $codSis, $nome);
 		
 		mysqli_stmt_execute($stmt);
 		
@@ -45,7 +37,7 @@ if (isset($_POST['submit']))
 		
 		if ($affected_rows == 1)
 		{
-			echo 'Espécie cadastrada';
+			echo 'Sistema cadastrado';
 			
 			mysqli_stmt_close($stmt);
 			
@@ -72,5 +64,5 @@ if (isset($_POST['submit']))
 	}
 }
 
-header('location: ../home.php');
+header('location: ../../home.php');
 ?>

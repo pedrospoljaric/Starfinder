@@ -2,12 +2,14 @@ var selectedTab = ""
 
 function selectTable(tableName)
 {
-	alert('oi');
 	hideAllSections();
 	var comandos = document.getElementById("comandos");
 	comandos.style.display = 'block';
 	
 	selectedTab = tableName;
+	
+	var monica = document.getElementById("monica");
+	monica.data = '_php/getInfo'+selectedTab+'.php';
 }
 
 function selectOption(opt)

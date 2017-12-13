@@ -4,21 +4,29 @@ if (isset($_POST['submit']))
 {
 	$data_missing = array();
 	
-	if (empty($_POST['nome_cientifico']))
+	if (empty($_POST['nome']))
 	{
-		$data_missing[] = 'nome_cientifico';
+		$data_missing[] = 'nome';
 	}
 	else
 	{
-		$nome_cientifico = trim($_POST['nome_cientifico']);
+		$nome = trim($_POST['nome']);
 	}
-	if (empty($_POST['nome_usual']))
+	if (empty($_POST['data_inicio']))
 	{
-		$data_missing[] = 'nome_usual';
+		$data_missing[] = 'data_inicio';
 	}
 	else
 	{
-		$nome_usual = trim($_POST['nome_usual']);
+		$data_inicio = trim($_POST['data_inicio']);
+	}
+	if (empty($_POST['data_fim']))
+	{
+		$data_missing[] = 'data_fim';
+	}
+	else
+	{
+		$data_fim = trim($_POST['data_fim']);
 	}
 	if (empty($_POST['descricao']))
 	{
@@ -28,16 +36,24 @@ if (isset($_POST['submit']))
 	{
 		$descricao = trim($_POST['descricao']);
 	}
+	if (empty($_POST['codLug']))
+	{
+		$data_missing[] = 'codLug';
+	}
+	else
+	{
+		$codLug = trim($_POST['codLug']);
+	}
 	
 	if (empty($data_missing))
 	{
 		require_once('mysqli_connect.php');
 		
-		$query = "INSERT INTO Especie VALUES (NULL, ?, ?, ?)";
+		$query = "INSERT INTO Conflito VALUES (NULL, ?, ?, ?, ?, ?)";
 		
 		$stmt = mysqli_prepare($dbc, $query);
 		
-		mysqli_stmt_bind_param($stmt, "sss", $nome_cientifico, $nome_usual, $descricao);
+		mysqli_stmt_bind_param($stmt, "ssssi", $nome, $data_inicio, $data_fim, $descricao, $codLug);
 		
 		mysqli_stmt_execute($stmt);
 		
@@ -45,7 +61,7 @@ if (isset($_POST['submit']))
 		
 		if ($affected_rows == 1)
 		{
-			echo 'Espécie cadastrada';
+			echo 'Conflito cadastrado';
 			
 			mysqli_stmt_close($stmt);
 			
@@ -72,5 +88,5 @@ if (isset($_POST['submit']))
 	}
 }
 
-header('location: ../home.php');
+header('location: ../../home.php');
 ?>
