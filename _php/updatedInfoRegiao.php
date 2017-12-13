@@ -25,11 +25,11 @@ if (isset($_POST['submit']))
 	{
 		require_once('mysqli_connect.php');
 		
-		$query = "INSERT INTO Regiao VALUES (?, ?)";
+		$query = "UPDATE Regiao SET descricao=? WHERE codReg=?)";
 		
 		$stmt = mysqli_prepare($dbc, $query);
 		
-		mysqli_stmt_bind_param($stmt, "is", $codReg, $descricao);
+		mysqli_stmt_bind_param($stmt, "si", $descricao, $codReg);
 		
 		mysqli_stmt_execute($stmt);
 		
@@ -37,7 +37,7 @@ if (isset($_POST['submit']))
 		
 		if ($affected_rows == 1)
 		{
-			echo 'Região cadastrada';
+			echo 'Região atualizada';
 			
 			mysqli_stmt_close($stmt);
 			

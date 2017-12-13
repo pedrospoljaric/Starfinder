@@ -88,5 +88,5 @@ if (isset($_POST['submit']))
 	}
 }
 
-header('location: ../../home.php');
+header('location: ../home.php');
 ?>

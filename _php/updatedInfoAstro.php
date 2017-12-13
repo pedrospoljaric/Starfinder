@@ -4,13 +4,13 @@ if (isset($_POST['submit']))
 {
 	$data_missing = array();
 	
-	if (empty($_POST['codSis']))
+	if (empty($_POST['codAst']))
 	{
-		$data_missing[] = 'codSis';
+		$data_missing[] = 'codAst';
 	}
 	else
 	{
-		$codSis = trim($_POST['codSis']);
+		$codAst = trim($_POST['codAst']);
 	}
 	if (empty($_POST['nome']))
 	{
@@ -20,16 +20,40 @@ if (isset($_POST['submit']))
 	{
 		$nome = trim($_POST['nome']);
 	}
+	if (empty($_POST['composicao']))
+	{
+		$data_missing[] = 'composicao';
+	}
+	else
+	{
+		$composicao = trim($_POST['composicao']);
+	}
+	if (empty($_POST['dist']))
+	{
+		$data_missing[] = 'dist';
+	}
+	else
+	{
+		$dist = trim($_POST['dist']);
+	}
+	if (empty($_POST['codSet']))
+	{
+		$data_missing[] = 'codSet';
+	}
+	else
+	{
+		$codSet = trim($_POST['codSet']);
+	}
 	
 	if (empty($data_missing))
 	{
 		require_once('mysqli_connect.php');
 		
-		$query = "INSERT INTO Sistema VALUES (?, ?)";
+		$query = "UPDATE Astro SET nome=?, composicao=?, dist=?, codSet=? WHERE codAst=?";
 		
 		$stmt = mysqli_prepare($dbc, $query);
 		
-		mysqli_stmt_bind_param($stmt, "is", $codSis, $nome);
+		mysqli_stmt_bind_param($stmt, "ssdii", $nome, $composicao, $dist, $codSet, $codAst);
 		
 		mysqli_stmt_execute($stmt);
 		
@@ -37,7 +61,7 @@ if (isset($_POST['submit']))
 		
 		if ($affected_rows == 1)
 		{
-			echo 'Sistema cadastrado';
+			echo 'Astro atualizado';
 			
 			mysqli_stmt_close($stmt);
 			

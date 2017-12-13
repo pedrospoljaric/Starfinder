@@ -12,6 +12,22 @@ if (isset($_POST['submit']))
 	{
 		$nome = trim($_POST['nome']);
 	}
+	if (empty($_POST['data_inicio']))
+	{
+		$data_missing[] = 'data_inicio';
+	}
+	else
+	{
+		$data_inicio = trim($_POST['data_inicio']);
+	}
+	if (empty($_POST['data_fim']))
+	{
+		$data_missing[] = 'data_fim';
+	}
+	else
+	{
+		$data_fim = trim($_POST['data_fim']);
+	}
 	if (empty($_POST['descricao']))
 	{
 		$data_missing[] = 'descricao';
@@ -20,32 +36,32 @@ if (isset($_POST['submit']))
 	{
 		$descricao = trim($_POST['descricao']);
 	}
-	if (empty($_POST['dtCriacao']))
+	if (empty($_POST['codLug']))
 	{
-		$data_missing[] = 'dtCriacao';
+		$data_missing[] = 'codLug';
 	}
 	else
 	{
-		$dtCriacao = trim($_POST['dtCriacao']);
+		$codLug = trim($_POST['codLug']);
 	}
-	if (empty($_POST['dtDissolucao']))
+	if (empty($_POST['codConf']))
 	{
-		$data_missing[] = 'dtDissolucao';
+		$data_missing[] = 'codConf';
 	}
 	else
 	{
-		$dtDissolucao = trim($_POST['dtDissolucao']);
+		$codConf = trim($_POST['codConf']);
 	}
 	
 	if (empty($data_missing))
 	{
 		require_once('mysqli_connect.php');
 		
-		$query = "INSERT INTO Organizacao VALUES (NULL, ?, ?, ?, ?)";
+		$query = "UPDATE Conflito SET nome=?, data_inicio=?, data_fim=?, descricao=?, codLug=? WHERE codConf=?";
 		
 		$stmt = mysqli_prepare($dbc, $query);
 		
-		mysqli_stmt_bind_param($stmt, "ssss", $nome, $descricao, $dtCriacao, $dtDissolucao);
+		mysqli_stmt_bind_param($stmt, "ssssii", $nome, $data_inicio, $data_fim, $descricao, $codLug, $codConf);
 		
 		mysqli_stmt_execute($stmt);
 		
@@ -53,7 +69,7 @@ if (isset($_POST['submit']))
 		
 		if ($affected_rows == 1)
 		{
-			echo 'Organização cadastrada';
+			echo 'Conflito atualizado';
 			
 			mysqli_stmt_close($stmt);
 			

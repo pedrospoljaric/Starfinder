@@ -49,7 +49,7 @@ if (isset($_POST['submit']))
 	{
 		require_once('mysqli_connect.php');
 		
-		$query = "INSERT INTO Especie VALUES (?, ?, ?, ?, ?)";
+		$query = "INSERT INTO Astro VALUES (?, ?, ?, ?, ?)";
 		
 		$stmt = mysqli_prepare($dbc, $query);
 		
@@ -88,5 +88,5 @@ if (isset($_POST['submit']))
 	}
 }
 
-header('location: ../../home.php');
+header('location: ../home.php');
 ?>
