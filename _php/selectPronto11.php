@@ -19,18 +19,24 @@ $response = @mysqli_query($dbc, $query);
 
 if ($response)
 {
-	echo '<table align="left" border-collapse="collapse" border="1px solid black"
+	echo'<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+</style>';
+	echo '<table align="left"
 	cellspacing="5" cellpadding="8">
 	
-	<tr border="1px solid black">
-		<td border="1px solid black" align="left"><b>Código do astro</b></td>
-		<td border="1px solid black" align="left"><b>Nome do astro</b></td>
-		<td border="1px solid black" align="left"><b>Composição do astro</b></td>
-		<td border="1px solid black" align="left"><b>Satélites orbitando</b></td>
-		<td border="1px solid black" align="left"><b>Planetas orbitando</b></td>
-		<td border="1px solid black" align="left"><b>Asteróides orbitando</b></td>
-		<td border="1px solid black" align="left"><b>Estrelas orbitando</b></td>
-		<td border="1px solid black" align="left"><b>Remanescentes orbitando</b></td>
+	<tr>
+		<td><b>Código do astro</b></td>
+		<td><b>Nome do astro</b></td>
+		<td><b>Composição do astro</b></td>
+		<td><b>Satélites orbitando</b></td>
+		<td><b>Planetas orbitando</b></td>
+		<td><b>Asteróides orbitando</b></td>
+		<td><b>Estrelas orbitando</b></td>
+		<td><b>Remanescentes orbitando</b></td>
 	</tr>';
 	
 	while ($row = mysqli_fetch_array($response))

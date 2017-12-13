@@ -8,15 +8,21 @@ $response = @mysqli_query($dbc, $query);
 
 if ($response)
 {
-	echo '<table align="left" border-collapse="collapse" border="1px solid black"
+	echo'<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+</style>';
+	echo '<table align="left"
 	cellspacing="5" cellpadding="8">
 	
-	<tr border="1px solid black">
-		<td border="1px solid black" align="left"><b>codOrg</b></td>
-		<td border="1px solid black" align="left"><b>nome</b></td>
-		<td border="1px solid black" align="left"><b>descricao</b></td>
-		<td border="1px solid black" align="left"><b>dtCriacao</b></td>
-		<td border="1px solid black" align="left"><b>dtDissolucao</b></td>
+	<tr>
+		<td><b>codOrg</b></td>
+		<td><b>nome</b></td>
+		<td><b>descricao</b></td>
+		<td><b>dtCriacao</b></td>
+		<td><b>dtDissolucao</b></td>
 	</tr>';
 	
 	while ($row = mysqli_fetch_array($response))
