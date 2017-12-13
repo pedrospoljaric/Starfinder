@@ -17,14 +17,20 @@ $response = @mysqli_query($dbc, $query);
 
 if ($response)
 {
+	echo'<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+</style>';
 	echo '<table align="left"
 	cellspacing="5" cellpadding="8">
 	
 	<tr>
-		<td align="left"><b>Código do astro</b></td>
-		<td align="left"><b>Nome do astro</b></td>
-		<td align="left"><b>Nome da estrela</b></td>
-		<td align="left"><b>Nome do sistema</b></td>
+		<td><b>Código do astro</b></td>
+		<td><b>Nome do astro</b></td>
+		<td><b>Nome da estrela</b></td>
+		<td><b>Nome do sistema</b></td>
 	</tr>';
 	
 	while ($row = mysqli_fetch_array($response))

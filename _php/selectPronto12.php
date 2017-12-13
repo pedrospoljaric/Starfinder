@@ -21,18 +21,24 @@ $response = @mysqli_query($dbc, $query);
 
 if ($response)
 {
+	echo'<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+</style>';
 	echo '<table align="left"
 	cellspacing="5" cellpadding="8">
 	
 	<tr>
-		<td align="left"><b>Código da região</b></td>
-		<td align="left"><b>Nome da região</b></td>
-		<td align="left"><b>Total de astros</b></td>
-		<td align="left"><b>Planetas</b></td>
-		<td align="left"><b>Satélites</b></td>
-		<td align="left"><b>Asteróides</b></td>
-		<td align="left"><b>Estrelas</b></td>
-		<td align="left"><b>Remanescentes</b></td>
+		<td><b>Código da região</b></td>
+		<td><b>Nome da região</b></td>
+		<td><b>Total de astros</b></td>
+		<td><b>Planetas</b></td>
+		<td><b>Satélites</b></td>
+		<td><b>Asteróides</b></td>
+		<td><b>Estrelas</b></td>
+		<td><b>Remanescentes</b></td>
 	</tr>';
 	
 	while ($row = mysqli_fetch_array($response))

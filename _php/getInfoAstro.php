@@ -8,6 +8,13 @@ $response = @mysqli_query($dbc, $query);
 
 if ($response)
 {
+	echo'<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+</style>';
+
 	echo '<table align="left"
 	cellspacing="5" cellpadding="8">
 	

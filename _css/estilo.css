@@ -178,6 +178,12 @@ section#mainSelect object {
 	width: 790px;
 	height: 497px;
 }
+section#mainSelect table{
+	border-collapse: collapse;
+}
+section#mainSelect table, th, td{
+	border: 1px solid black;
+}
 section#mainInsert {
 	display: none;
 	position: absolute;
