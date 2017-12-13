@@ -104,7 +104,7 @@ require_once('_php/mysqli_connect.php');
 			<input type="text" name="codSet" size="30" value=""</>
 			</p>
 			<p>
-				<input type="submit" name="submit" value="Cadastrar" />
+				<input type="button" class="submit" name="submit" value="Cadastrar" />
 			</p>
 		</form>
 		<form action="_php/addedInfoConflito.php" method="post" id="conflitoForm">
@@ -125,7 +125,7 @@ require_once('_php/mysqli_connect.php');
 			<input type="text" name="codLug" size="30" value=""</>
 			</p>
 			<p>
-				<input type="submit" name="submit" value="Cadastrar" />
+				<input type="button" class="submit" name="submit" value="Cadastrar" />
 			</p>
 		</form>
 		<form action="_php/addedInfoEspecie.php" method="post" id="especieForm">
@@ -150,7 +150,7 @@ require_once('_php/mysqli_connect.php');
 			</select>
 			</p>
 			<p>
-				<input type="submit" name="submit" value="Cadastrar" />
+				<input type="button" class="submit" name="submit" value="Cadastrar" />
 			</p>
 		</form>
 		<form action="_php/addedInfoOrganizacao.php" method="post" id="organizacaoForm">
@@ -168,7 +168,7 @@ require_once('_php/mysqli_connect.php');
 			<input type="text" name="dtDissolucao" size="30" value=""</>
 			</p>
 			<p>
-				<input type="submit" name="submit" value="Cadastrar" />
+				<input type="button" class="submit" name="submit" value="Cadastrar" />
 			</p>
 		</form>
 		<form action="_php/addedInfoRegiao.php" method="post" id="regiaoForm">
@@ -180,7 +180,7 @@ require_once('_php/mysqli_connect.php');
 			<input type="text" name="descricao" size="30" value=""</>
 			</p>
 			<p>
-				<input type="submit" name="submit" value="Cadastrar" />
+				<input type="button" class="submit" name="submit" value="Cadastrar" />
 			</p>
 		</form>
 		<form action="_php/addedInfoSistema.php" method="post" id="sistemaForm">
@@ -192,7 +192,7 @@ require_once('_php/mysqli_connect.php');
 			<input type="text" name="nome" size="30" value=""</>
 			</p>
 			<p>
-				<input type="submit" name="submit" value="Cadastrar" />
+				<input type="button" class="submit" name="submit" value="Cadastrar" />
 			</p>
 		</form>
 	</section>
@@ -215,7 +215,7 @@ require_once('_php/mysqli_connect.php');
 			<input type="text" name="codSet" size="30" value=""</>
 			</p>
 			<p>
-				<input type="submit" name="submit" value="Atualizar" />
+				<input type="button" class="submit" name="submit" value="Atualizar" />
 			</p>
 		</form>
 		<form action="_php/updatedInfoConflito.php" method="post" id="conflitoUpdateForm">
@@ -239,7 +239,7 @@ require_once('_php/mysqli_connect.php');
 			<input type="text" name="codLug" size="30" value=""</>
 			</p>
 			<p>
-				<input type="submit" name="submit" value="Atualizar" />
+				<input type="button" class="submit" name="submit" value="Atualizar" />
 			</p>
 		</form>
 		<form action="_php/updatedInfoEspecie.php" method="post" id="especieUpdateForm">
@@ -257,7 +257,7 @@ require_once('_php/mysqli_connect.php');
 			<input type="text" name="descricao" size="30" value=""</>
 			</p>
 			<p>
-				<input type="submit" name="submit" value="Atualizar" />
+				<input type="button" class="submit" name="submit" value="Atualizar" />
 			</p>
 		</form>
 		<form action="_php/updatedInfoOrganizacao.php" method="post" id="organizacaoUpdateForm">
@@ -278,7 +278,7 @@ require_once('_php/mysqli_connect.php');
 			<input type="text" name="dtDissolucao" size="30" value=""</>
 			</p>
 			<p>
-				<input type="submit" name="submit" value="Atualizar" />
+				<input type="button" class="submit" name="submit" value="Atualizar" />
 			</p>
 		</form>
 		<form action="_php/updatedInfoRegiao.php" method="post" id="regiaoUpdateForm">
@@ -290,7 +290,7 @@ require_once('_php/mysqli_connect.php');
 			<input type="text" name="descricao" size="30" value=""</>
 			</p>
 			<p>
-				<input type="submit" name="submit" value="Atualizar" />
+				<input type="button" class="submit" name="submit" value="Atualizar" />
 			</p>
 		</form>
 		<form action="_php/updatedInfoSistema.php" method="post" id="sistemaUpdateForm">
@@ -302,7 +302,7 @@ require_once('_php/mysqli_connect.php');
 			<input type="text" name="nome" size="30" value=""</>
 			</p>
 			<p>
-				<input type="submit" name="submit" value="Atualizar" />
+				<input type="button" class="submit" name="submit" value="Atualizar" />
 			</p>
 		</form>
 	</section>
@@ -313,7 +313,7 @@ require_once('_php/mysqli_connect.php');
 			<input type="text" name="codAst" size="30" value=""</>
 			</p>
 			<p>
-				<input type="submit" name="submit" value="Excluir" />
+				<input type="button" class="submit" name="submit" value="Excluir" />
 			</p>
 		</form>
 		<form action="_php/deletedInfoConflito.php" method="post" id="conflitoDeleteForm">
@@ -322,7 +322,7 @@ require_once('_php/mysqli_connect.php');
 			<input type="text" name="codConf" size="30" value=""</>
 			</p>
 			<p>
-				<input type="submit" name="submit" value="Excluir" />
+				<input type="button" class="submit" name="submit" value="Excluir" />
 			</p>
 		</form>
 		<form action="_php/deletedInfoEspecie.php" method="post" id="especieDeleteForm">
@@ -331,7 +331,7 @@ require_once('_php/mysqli_connect.php');
 			<input type="text" name="codEsp" size="30" value=""</>
 			</p>
 			<p>
-				<input type="submit" name="submit" value="Excluir" />
+				<input type="button" class="submit" name="submit" value="Excluir" />
 			</p>
 		</form>
 		<form action="_php/deletedInfoOrganizacao.php" method="post" id="organizacaoDeleteForm">
@@ -340,7 +340,7 @@ require_once('_php/mysqli_connect.php');
 			<input type="text" name="codOrg" size="30" value=""</>
 			</p>
 			<p>
-				<input type="submit" name="submit" value="Excluir" />
+				<input type="button" class="submit" name="submit" value="Excluir" />
 			</p>
 		</form>
 		<form action="_php/deletedInfoRegiao.php" method="post" id="regiaoDeleteForm">
@@ -349,7 +349,7 @@ require_once('_php/mysqli_connect.php');
 			<input type="text" name="codReg" size="30" value=""</>
 			</p>
 			<p>
-				<input type="submit" name="submit" value="Excluir" />
+				<input type="button" class="submit" name="submit" value="Excluir" />
 			</p>
 		</form>
 		<form action="_php/deletedInfoSistema.php" method="post" id="sistemaDeleteForm">
@@ -358,7 +358,7 @@ require_once('_php/mysqli_connect.php');
 			<input type="text" name="codSis" size="30" value=""</>
 			</p>
 			<p>
-				<input type="submit" name="submit" value="Excluir" />
+				<input type="button" class="submit" name="submit" value="Excluir" />
 			</p>
 		</form>
 	</section>

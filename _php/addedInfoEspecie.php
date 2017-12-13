@@ -1,5 +1,5 @@
 <?php
-
+echo "withour true";
 if (isset($_POST['submit']))
 {
 	$data_missing = array();
@@ -51,6 +51,7 @@ if (isset($_POST['submit']))
 		
 		$affected_rows = mysqli_stmt_affected_rows($stmt);
 		
+
 		if ($affected_rows == 1)
 		{
 			echo 'Espécie cadastrada id='.mysqli_insert_id($dbc);
@@ -59,10 +60,12 @@ if (isset($_POST['submit']))
 			
 			$stmt = mysqli_prepare($dbc, $query);
 			
-			mysqli_stmt_bind_param($stmt, "ii", mysqli_insert_id(), $planeta_natal);
+			$inserted_id = mysqli_insert_id($dbc);
+			mysqli_stmt_bind_param($stmt, "ii", $inserted_id, $planeta_natal);
 			
 			mysqli_stmt_execute($stmt);
 
+			echo "Planeta linkado";
 		}
 		else
 		{
