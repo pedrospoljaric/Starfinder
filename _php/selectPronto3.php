@@ -2,7 +2,7 @@
 
 require_once('mysqli_connect.php');
 
-$query = "SELECT E.nome FROM Estrutura E JOIN Organizacao O ON E.codOrg = O.codOrg WHERE O.nome = 'Império Galáctico';";
+$query = "SELECT E.nome FROM Estrutura E JOIN Organizacao O ON E.codOrg = O.codOrg WHERE O.nome = 'Império Galáctico'";
 
 $response = @mysqli_query($dbc, $query);
 

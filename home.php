@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <?php
-	require "_php/_sql/magus.php";
 
-	$magus = new magus("localhost:3306", "root", "thinker", "bluemilk");
-	$magus->connect();
+require_once('_php/mysqli_connect.php');
+
 ?>
 <html lang="pt-br">
 
 <head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 	<meta charset="UTF-8"/>
 	<title>Starfinder</title>
 	<link rel="stylesheet" href="_bootstrap/css/bootstrap.min.css"/>
