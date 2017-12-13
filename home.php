@@ -129,7 +129,6 @@ require_once('_php/mysqli_connect.php');
 			<input type="text" name="descricao" size="30" value=""</>
 			</p>
 			<p>Código do lugar:
-			<input type="text" name="codLug" size="30" value=""</>
 			<select name="codLug">
 			<?php
 				$result = $magus->execute("SELECT * FROM VisaoLugar ORDER BY nome ASC", null);
