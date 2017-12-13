@@ -25,11 +25,15 @@ if (isset($_POST['submit']))
 	{
 		require_once('mysqli_connect.php');
 		
-		$query = "UPDATE Sistema SET nome=? WHERE CODsIS=?)";
+		echo '<script language="javascript">';
+		echo 'alert("message successfully sent")';
+		echo '</script>';
+		
+		$query = "UPDATE Sistema SET nome=? WHERE codSis=?";
 		
 		$stmt = mysqli_prepare($dbc, $query);
 		
-		mysqli_stmt_bind_param($stmt, "is", $nome, $codSis);
+		mysqli_stmt_bind_param($stmt, "si", $nome, $codSis);
 		
 		mysqli_stmt_execute($stmt);
 		

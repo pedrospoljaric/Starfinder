@@ -87,12 +87,15 @@ if (isset($_POST['submit']))
 	}
 	else
 	{
-		echo 'You need to enter the following data';
+		echo '<script language="javascript">';
+		echo 'alert("';
+		echo 'You need to enter the following data: ';
 		
 		foreach ($data_missing as $missing)
 		{
-			echo "$missing";
+			echo "$missing ";
 		}
+		echo '")</script>';
 	}
 }
 

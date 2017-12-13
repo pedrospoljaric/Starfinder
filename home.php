@@ -187,7 +187,7 @@
 		<form action="_php/updatedInfoConflito.php" method="post" id="conflitoUpdateForm">
 			<b>Atualizar Conflito</b>			
 			<p><b>Código:</b>
-			<input type="text" name="codAst" size="30" value=""</>
+			<input type="text" name="codConf" size="30" value=""</>
 			</p>
 			<p>Nome:
 			<input type="text" name="nome" size="30" value=""</>
@@ -211,7 +211,7 @@
 		<form action="_php/updatedInfoEspecie.php" method="post" id="especieUpdateForm">
 			<b>Atualizar Espécie</b>
 			<p><b>Código:</b>
-			<input type="text" name="codAst" size="30" value=""</>
+			<input type="text" name="codEsp" size="30" value=""</>
 			</p>
 			<p>Nome científico:
 			<input type="text" name="nome_cientifico" size="30" value=""</>
@@ -229,7 +229,7 @@
 		<form action="_php/updatedInfoOrganizacao.php" method="post" id="organizacaoUpdateForm">
 			<b>Atualizar Organização</b>			
 			<p><b>Código:</b>
-			<input type="text" name="codAst" size="30" value=""</>
+			<input type="text" name="codOrg" size="30" value=""</>
 			</p>
 			<p>Nome:
 			<input type="text" name="nome" size="30" value=""</>
@@ -250,7 +250,7 @@
 		<form action="_php/updatedInfoRegiao.php" method="post" id="regiaoUpdateForm">
 			<b>Atualizar Região</b>			
 			<p><b>Código:</b>
-			<input type="text" name="codAst" size="30" value=""</>
+			<input type="text" name="codReg" size="30" value=""</>
 			</p>
 			<p>Descrição:
 			<input type="text" name="descricao" size="30" value=""</>
@@ -262,7 +262,7 @@
 		<form action="_php/updatedInfoSistema.php" method="post" id="sistemaUpdateForm">
 			<b>Atualizar Sistema</b>			
 			<p><b>Código:</b>
-			<input type="text" name="codAst" size="30" value=""</>
+			<input type="text" name="codSis" size="30" value=""</>
 			</p>
 			<p>Nome:
 			<input type="text" name="nome" size="30" value=""</>
