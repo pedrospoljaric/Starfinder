@@ -17,6 +17,8 @@ if (isset($_POST['submit']))
 	{
 		require_once('mysqli_connect.php');
 		
+		$result = $magus->execute("DELETE FROM ConflitoOrganizacao WHERE codConf=?", array($codConf));
+		
 		$query = "DELETE FROM Conflito WHERE codConf=?";
 		
 		$stmt = mysqli_prepare($dbc, $query);

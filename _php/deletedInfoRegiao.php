@@ -17,6 +17,10 @@ if (isset($_POST['submit']))
 	{
 		require_once('mysqli_connect.php');
 		
+		$result1 = $magus->execute("DELETE FROM SistemaRegiao WHERE codReg=?", array($codReg));
+		$result2 = $magus->execute("DELETE FROM AsteroideRegiao WHERE codReg=?", array($codReg));
+		$result2 = $magus->execute("DELETE FROM NomeRegiao WHERE codReg=?", array($codReg));
+		
 		$query = "DELETE FROM Regiao WHERE codReg=?)";
 		
 		$stmt = mysqli_prepare($dbc, $query);
