@@ -51,6 +51,7 @@ if (isset($_POST['submit']))
 		
 		$affected_rows = mysqli_stmt_affected_rows($stmt);
 		
+		
 		if ($affected_rows == 1)
 		{
 			echo 'Espécie cadastrada id='.mysqli_insert_id($dbc);
@@ -59,7 +60,9 @@ if (isset($_POST['submit']))
 			
 			$stmt = mysqli_prepare($dbc, $query);
 			
-			mysqli_stmt_bind_param($stmt, "ii", mysqli_insert_id(), $planeta_natal);
+			$claudia = mysqli_insert_id($dbc);
+			
+			mysqli_stmt_bind_param($stmt, "ii", $claudia, $planeta_natal);
 			
 			mysqli_stmt_execute($stmt);
 

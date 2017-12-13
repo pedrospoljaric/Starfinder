@@ -17,6 +17,11 @@ if (isset($_POST['submit']))
 	{
 		require_once('mysqli_connect.php');
 		
+		$result1 = $magus->execute("DELETE FROM ConflitoOrganizacao WHERE codOrg=?", array($codOrg));
+		$result2 = $magus->execute("DELETE FROM EstaOrganLugar WHERE codOrg=?", array($codOrg));
+		$result4 = $magus->execute("DELETE FROM EstruturaLugar WHERE codEst IN (SELECT codEst FROM Estrutura WHERE codOrg=?)", array($codOrg));
+		$result5 = $magus->execute("DELETE FROM Estrutura WHERE codOrg=?", array($codOrg));
+		
 		$query = "DELETE FROM Organizacao WHERE codOrg=?";
 		
 		$stmt = mysqli_prepare($dbc, $query);

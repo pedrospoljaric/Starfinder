@@ -101,7 +101,14 @@ require_once('_php/mysqli_connect.php');
 			<input type="text" name="dist" size="30" value=""</>
 			</p>
 			<p>Código do setor:
-			<input type="text" name="codSet" size="30" value=""</>
+			<select name="codSet">
+			<?php
+				$result = $magus->execute("SELECT * FROM Setor ORDER BY nome ASC", null);
+				foreach($result as $row){
+					echo '<option value="'.$row['codSet'].'">'.$row['nome'].'</option>';
+				}
+			?>
+			</select>
 			</p>
 			<p>
 				<input type="submit" name="submit" value="Cadastrar" />
@@ -123,6 +130,14 @@ require_once('_php/mysqli_connect.php');
 			</p>
 			<p>Código do lugar:
 			<input type="text" name="codLug" size="30" value=""</>
+			<select name="codLug">
+			<?php
+				$result = $magus->execute("SELECT * FROM VisaoLugar ORDER BY nome ASC", null);
+				foreach($result as $row){
+					echo '<option value="'.$row['codLug'].'">'.$row['nome'].'</option>';
+				}
+			?>
+			</select>
 			</p>
 			<p>
 				<input type="submit" name="submit" value="Cadastrar" />
@@ -212,7 +227,14 @@ require_once('_php/mysqli_connect.php');
 			<input type="text" name="dist" size="30" value=""</>
 			</p>
 			<p>Código do setor:
-			<input type="text" name="codSet" size="30" value=""</>
+			<select name="codSet">
+			<?php
+				$result = $magus->execute("SELECT * FROM Setor ORDER BY nome ASC", null);
+				foreach($result as $row){
+					echo '<option value="'.$row['codSet'].'">'.$row['nome'].'</option>';
+				}
+			?>
+			</select>
 			</p>
 			<p>
 				<input type="submit" name="submit" value="Atualizar" />
@@ -236,7 +258,14 @@ require_once('_php/mysqli_connect.php');
 			<input type="text" name="descricao" size="30" value=""</>
 			</p>
 			<p>Código do lugar:
-			<input type="text" name="codLug" size="30" value=""</>
+			<select name="codLug">
+			<?php
+				$result = $magus->execute("SELECT * FROM VisaoLugar ORDER BY nome ASC", null);
+				foreach($result as $row){
+					echo '<option value="'.$row['codLug'].'">'.$row['nome'].'</option>';
+				}
+			?>
+			</select>
 			</p>
 			<p>
 				<input type="submit" name="submit" value="Atualizar" />
@@ -255,6 +284,16 @@ require_once('_php/mysqli_connect.php');
 			</p>
 			<p>Descrição:
 			<input type="text" name="descricao" size="30" value=""</>
+			</p>
+			<p>Planeta natal:
+			<select name="planeta_natal">
+			<?php
+				$result = $magus->execute("SELECT * FROM VisaoLugar WHERE tipoLugar IN ('Planeta', 'Satelite') ORDER BY nome ASC", null);
+				foreach($result as $row){
+					echo '<option value="'.$row['codLug'].'">'.$row['nome'].' ('.$row['tipoLugar'].')</option>';
+				}
+			?>
+			</select>
 			</p>
 			<p>
 				<input type="submit" name="submit" value="Atualizar" />
@@ -310,7 +349,14 @@ require_once('_php/mysqli_connect.php');
 		<form action="_php/deletedInfoAstro.php" method="post" id="astroDeleteForm">
 			<b>Excluir Astro</b>			
 			<p><b>Código:</b>
-			<input type="text" name="codAst" size="30" value=""</>
+			<select name="codAst">
+			<?php
+				$result = $magus->execute("SELECT * FROM Astro ORDER BY nome ASC", null);
+				foreach($result as $row){
+					echo '<option value="'.$row['codAst'].'">'.$row['nome'].'</option>';
+				}
+			?>
+			</select>
 			</p>
 			<p>
 				<input type="submit" name="submit" value="Excluir" />
@@ -319,7 +365,14 @@ require_once('_php/mysqli_connect.php');
 		<form action="_php/deletedInfoConflito.php" method="post" id="conflitoDeleteForm">
 			<b>Excluir Conflito</b>			
 			<p><b>Código:</b>
-			<input type="text" name="codConf" size="30" value=""</>
+			<select name="codConf">
+			<?php
+				$result = $magus->execute("SELECT * FROM Conflito ORDER BY nome ASC", null);
+				foreach($result as $row){
+					echo '<option value="'.$row['codConf'].'">'.$row['nome'].'</option>';
+				}
+			?>
+			</select>
 			</p>
 			<p>
 				<input type="submit" name="submit" value="Excluir" />
@@ -328,7 +381,14 @@ require_once('_php/mysqli_connect.php');
 		<form action="_php/deletedInfoEspecie.php" method="post" id="especieDeleteForm">
 			<b>Excluir Espécie</b>
 			<p><b>Código:</b>
-			<input type="text" name="codEsp" size="30" value=""</>
+			<select name="codEsp">
+			<?php
+				$result = $magus->execute("SELECT * FROM Especie ORDER BY nome_usual ASC", null);
+				foreach($result as $row){
+					echo '<option value="'.$row['codEsp'].'">'.$row['nome_usual'].'</option>';
+				}
+			?>
+			</select>
 			</p>
 			<p>
 				<input type="submit" name="submit" value="Excluir" />
@@ -337,7 +397,14 @@ require_once('_php/mysqli_connect.php');
 		<form action="_php/deletedInfoOrganizacao.php" method="post" id="organizacaoDeleteForm">
 			<b>Excluir Organização</b>			
 			<p><b>Código:</b>
-			<input type="text" name="codOrg" size="30" value=""</>
+			<select name="codOrg">
+			<?php
+				$result = $magus->execute("SELECT * FROM Organizacao ORDER BY nome ASC", null);
+				foreach($result as $row){
+					echo '<option value="'.$row['codOrg'].'">'.$row['nome'].'</option>';
+				}
+			?>
+			</select>
 			</p>
 			<p>
 				<input type="submit" name="submit" value="Excluir" />
@@ -346,7 +413,14 @@ require_once('_php/mysqli_connect.php');
 		<form action="_php/deletedInfoRegiao.php" method="post" id="regiaoDeleteForm">
 			<b>Excluir Região</b>			
 			<p><b>Código:</b>
-			<input type="text" name="codReg" size="30" value=""</>
+			<select name="codReg">
+			<?php
+				$result = $magus->execute("SELECT * FROM VisaoRegiao ORDER BY nome ASC", null);
+				foreach($result as $row){
+					echo '<option value="'.$row['codReg'].'">'.$row['nome'].'</option>';
+				}
+			?>
+			</select>
 			</p>
 			<p>
 				<input type="submit" name="submit" value="Excluir" />
@@ -355,7 +429,14 @@ require_once('_php/mysqli_connect.php');
 		<form action="_php/deletedInfoSistema.php" method="post" id="sistemaDeleteForm">
 			<b>Excluir Sistema</b>			
 			<p><b>Código:</b>
-			<input type="text" name="codSis" size="30" value=""</>
+			<select name="codSis">
+			<?php
+				$result = $magus->execute("SELECT * FROM Sistema ORDER BY nome ASC", null);
+				foreach($result as $row){
+					echo '<option value="'.$row['codSis'].'">'.$row['nome'].'</option>';
+				}
+			?>
+			</select>
 			</p>
 			<p>
 				<input type="submit" name="submit" value="Excluir" />

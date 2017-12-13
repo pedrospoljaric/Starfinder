@@ -19,6 +19,8 @@ if (isset($_POST['submit']))
 		
 		$query = "DELETE FROM Especie WHERE codEsp=?";
 		
+		$result = $magus->execute("DELETE FROM PertenceEspecieAstro WHERE codEsp=?", array($codEsp));
+		
 		$stmt = mysqli_prepare($dbc, $query);
 		
 		mysqli_stmt_bind_param($stmt, "i", $codEsp);

@@ -17,6 +17,15 @@ if (isset($_POST['submit']))
 	{
 		require_once('mysqli_connect.php');
 		
+		$result1 = $magus->execute("DELETE FROM AstroOrbita WHERE codAst=?", array($codAst));
+		$result2 = $magus->execute("DELETE FROM AstroSistema WHERE codAst=?", array($codAst));
+		$result3 = $magus->execute("DELETE FROM PertenceEspecieAstro WHERE codAst=?", array($codAst));
+		$result3 = $magus->execute("DELETE FROM Asteroide WHERE codAst=?", array($codAst));
+		$result3 = $magus->execute("DELETE FROM Satelite WHERE codAst=?", array($codAst));
+		$result3 = $magus->execute("DELETE FROM Planeta WHERE codAst=?", array($codAst));
+		$result3 = $magus->execute("DELETE FROM Estrela WHERE codAst=?", array($codAst));
+		$result3 = $magus->execute("DELETE FROM Lugar WHERE codLug=?", array($codAst));
+		
 		$query = "DELETE FROM Astro WHERE codAst=?";
 		
 		$stmt = mysqli_prepare($dbc, $query);

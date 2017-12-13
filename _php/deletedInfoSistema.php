@@ -17,6 +17,8 @@ if (isset($_POST['submit']))
 	{
 		require_once('mysqli_connect.php');
 		
+		$result = $magus->execute("DELETE FROM SistemaRegiao WHERE codSis=?", array($codSis));
+		
 		$query = "DELETE FROM Sistema WHERE codSis=?";
 		
 		$stmt = mysqli_prepare($dbc, $query);
