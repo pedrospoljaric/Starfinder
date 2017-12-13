@@ -28,6 +28,14 @@ if (isset($_POST['submit']))
 	{
 		$descricao = trim($_POST['descricao']);
 	}
+	if (empty($_POST['planeta_natal']))
+	{
+		$data_missing[] = 'planeta_natal';
+	}
+	else
+	{
+		$planeta_natal = trim($_POST['planeta_natal']);
+	}
 	
 	if (empty($data_missing))
 	{
@@ -45,21 +53,28 @@ if (isset($_POST['submit']))
 		
 		if ($affected_rows == 1)
 		{
-			echo 'Espécie cadastrada';
+			echo 'Espécie cadastrada id='.mysqli_insert_id($dbc);
+
+			$query = "INSERT INTO PertenceEspecieAstro VALUES (?, ?, 1)";
 			
-			mysqli_stmt_close($stmt);
+			$stmt = mysqli_prepare($dbc, $query);
 			
-			mysqli_close($dbc);
+			mysqli_stmt_bind_param($stmt, "ii", mysqli_insert_id(), $planeta_natal);
+			
+			mysqli_stmt_execute($stmt);
+
 		}
 		else
 		{
 			echo 'Erro';
 			echo mysqli_error();
-			
-			mysqli_stmt_close($stmt);
-			
-			mysqli_close($dbc);
 		}
+
+		
+			
+		mysqli_stmt_close($stmt);
+		
+		mysqli_close($dbc);
 	}
 	else
 	{
@@ -72,5 +87,5 @@ if (isset($_POST['submit']))
 	}
 }
 
-header('location: ../home.php');
+//header('location: ../home.php');
 ?>

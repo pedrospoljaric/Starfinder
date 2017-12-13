@@ -1,8 +1,8 @@
 <?php
 
 DEFINE ('DB_USER', 'root');
-DEFINE ('DB_PASSWORD', '');
-DEFINE ('DB_HOST', 'localhost');
+DEFINE ('DB_PASSWORD', 'thinker');
+DEFINE ('DB_HOST', 'localhost:3306');
 DEFINE ('DB_NAME', 'bluemilk');
 
 $dbc = @mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME)

@@ -1,12 +1,23 @@
 <!DOCTYPE html>
+<?php
+	require "_php/_sql/magus.php";
+
+	$magus = new magus("localhost:3306", "root", "thinker", "bluemilk");
+	$magus->connect();
+?>
 <html lang="pt-br">
 
 <head>
 	<meta charset="UTF-8"/>
 	<title>Starfinder</title>
+	<link rel="stylesheet" href="_bootstrap/css/bootstrap.min.css"/>
 	<link rel="stylesheet" href="_css/estilo.css"/>
+	
+	<script language="javascript" src="_js/funcoes.js"></script>
+
+	<script src="jquery/jquery.min.js"></script>
+	<script src="_bootstrap/js/bootstrap.min.js"></script>
 </head>
-<script language="javascript" src="_js/funcoes.js"></script>
 <body>
 
 <div id="fundo_menu">
@@ -118,6 +129,16 @@
 			<p>Descrição:
 			<input type="text" name="descricao" size="30" value=""</>
 			</p>
+			<p>Planeta natal:
+			<select name="planeta_natal">
+			<?php
+				$result = $magus->execute("SELECT * FROM VisaoLugar WHERE tipoLugar IN ('Planeta', 'Satelite') ORDER BY nome ASC", null);
+				foreach($result as $row){
+					echo '<option value="'.$row['codLug'].'">'.$row['nome'].' ('.$row['tipoLugar'].')</option>';
+				}
+			?>
+			</select>
+			</p>
 			<p>
 				<input type="submit" name="submit" value="Cadastrar" />
 			</p>
@@ -178,7 +199,7 @@
 </section> 
 </div>
 
-<script src="jquery/jquery.min.js"></script>
 <script src="_js/general.js"></script>
+
 </body>
 </html>
