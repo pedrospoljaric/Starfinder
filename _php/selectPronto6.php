@@ -20,13 +20,13 @@ $response = @mysqli_query($dbc, $query);
 
 if ($response)
 {
-	echo '<table align="left"
+	echo '<table align="left" border-collapse="collapse" border="1px solid black"
 	cellspacing="5" cellpadding="8">
 	
-	<tr>
-		<td align="left"><b>Nome do astro</b></td>
-		<td align="left"><b>Tipo de estrela</b></td>
-		<td align="left"><b>Código da região</b></td>
+	<tr border="1px solid black">
+		<td border="1px solid black" align="left"><b>Nome do astro</b></td>
+		<td border="1px solid black" align="left"><b>Tipo de estrela</b></td>
+		<td border="1px solid black" align="left"><b>Código da região</b></td>
 	</tr>';
 	
 	while ($row = mysqli_fetch_array($response))

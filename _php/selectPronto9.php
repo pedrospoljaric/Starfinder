@@ -19,14 +19,14 @@ $response = @mysqli_query($dbc, $query);
 
 if ($response)
 {
-	echo '<table align="left"
+	echo '<table align="left" border-collapse="collapse" border="1px solid black"
 	cellspacing="5" cellpadding="8">
 	
-	<tr>
-		<td align="left"><b>Nome da região</b></td>
-		<td align="left"><b>Quantidade de remanescentes</b></td>
-		<td align="left"><b>Quantidade de estrelas</b></td>
-		<td align="left"><b>Proporção</b></td>
+	<tr border="1px solid black">
+		<td border="1px solid black" align="left"><b>Nome da região</b></td>
+		<td border="1px solid black" align="left"><b>Quantidade de remanescentes</b></td>
+		<td border="1px solid black" align="left"><b>Quantidade de estrelas</b></td>
+		<td border="1px solid black" align="left"><b>Proporção</b></td>
 	</tr>';
 	
 	while ($row = mysqli_fetch_array($response))

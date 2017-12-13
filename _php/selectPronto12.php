@@ -21,18 +21,18 @@ $response = @mysqli_query($dbc, $query);
 
 if ($response)
 {
-	echo '<table align="left"
+	echo '<table align="left" border-collapse="collapse" border="1px solid black"
 	cellspacing="5" cellpadding="8">
 	
-	<tr>
-		<td align="left"><b>Código da região</b></td>
-		<td align="left"><b>Nome da região</b></td>
-		<td align="left"><b>Total de astros</b></td>
-		<td align="left"><b>Planetas</b></td>
-		<td align="left"><b>Satélites</b></td>
-		<td align="left"><b>Asteróides</b></td>
-		<td align="left"><b>Estrelas</b></td>
-		<td align="left"><b>Remanescentes</b></td>
+	<tr border="1px solid black">
+		<td border="1px solid black" align="left"><b>Código da região</b></td>
+		<td border="1px solid black" align="left"><b>Nome da região</b></td>
+		<td border="1px solid black" align="left"><b>Total de astros</b></td>
+		<td border="1px solid black" align="left"><b>Planetas</b></td>
+		<td border="1px solid black" align="left"><b>Satélites</b></td>
+		<td border="1px solid black" align="left"><b>Asteróides</b></td>
+		<td border="1px solid black" align="left"><b>Estrelas</b></td>
+		<td border="1px solid black" align="left"><b>Remanescentes</b></td>
 	</tr>';
 	
 	while ($row = mysqli_fetch_array($response))

@@ -8,14 +8,14 @@ $response = @mysqli_query($dbc, $query);
 
 if ($response)
 {
-	echo '<table align="left"
+	echo '<table align="left" border-collapse="collapse" border="1px solid black"
 	cellspacing="5" cellpadding="8">
 	
-	<tr>
-		<td align="left"><b>codEsp</b></td>
-		<td align="left"><b>nome_cientifico</b></td>
-		<td align="left"><b>nome_usual</b></td>
-		<td align="left"><b>descricao</b></td>
+	<tr border="1px solid black">
+		<td border="1px solid black" align="left"><b>codEsp</b></td>
+		<td border="1px solid black" align="left"><b>nome_cientifico</b></td>
+		<td border="1px solid black" align="left"><b>nome_usual</b></td>
+		<td border="1px solid black" align="left"><b>descricao</b></td>
 	</tr>';
 	
 	while ($row = mysqli_fetch_array($response))
