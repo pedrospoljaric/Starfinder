@@ -54,7 +54,20 @@
 	</section>
 	
 	<section id="opcoes">
-	Lista de selects disponíveis vem aqui.
+	
+		<div onclick="changeSelect(1)">• Nomes dos astros que estão no Setor Calamari e orbitam o planeta Kashyyyk<br></div>
+		<div onclick="changeSelect(2)">• Nomes dos astros que orbitam a estrela Siskeen<br></div>
+		<div onclick="changeSelect(3)">• Nomes das estruturas dominadas pelo Império Galáctico<br></div>
+		<div onclick="changeSelect(4)">• Nomes dos astros que são habitados pela espécie Humana<br></div>
+		<div onclick="changeSelect(5)">• Nomes dos astros presentes no Sistema de Calamari<br></div>
+		<div onclick="changeSelect(6)">• Estrelas que pertencem a mesma região que os Mon Calamari habitam <br></div>
+		<div onclick="changeSelect(7)">• Encontramos um erro no mapa galáctico. Encontre quais planetas estão orbitando uma estrela (ou remanescente) mas não constam como pertencentes ao sistema da estrela<br></div>
+		<div onclick="changeSelect(8)">• Astros que estão no setor Corusca e suas órbitas e quantidades de orbitas, ordenando por tipo de lugar<br></div>
+		<div onclick="changeSelect(9)">• Contabilizar a proporcao de remanescentes de estrela por regiao da galáxia, ordenando pelo codRegiao<br></div>
+		<div onclick="changeSelect(10)">• Listas as Organizações que participaram de conflitos que duraram mais de uma década, ordenando por anos de conflito e exibindo somente o conflito que levou mais tempo<br></div>
+		<div onclick="changeSelect(11)">• Foi encontrado outro erro no mapa galáctico. Alguns planetas possuem outros planetas orbitando eles, não rola isso na física. exibir os astros e quantidade de satelites, planetas e outros corpos que orbitam ele<br></div>
+		<div onclick="changeSelect(12)">• Consultar total de astros nas regiões, especificando quantos de cada tipo de astro, o total e somente para regiões com menos de 5 astros cadatrados, ordenando da maior total de astros pro menor<br></div>
+	
 	</section>
 	
 	<section id="mainSelect">

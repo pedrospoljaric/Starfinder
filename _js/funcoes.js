@@ -12,6 +12,12 @@ function selectTable(tableName)
 	monica.data = '_php/getInfo'+selectedTab+'.php';
 }
 
+function changeSelect(id)
+{
+	var monica = document.getElementById("monica");
+	monica.data = '_php/selectPronto'+id+'.php';
+}
+
 function selectOption(opt)
 {
 	hideAllSections();
