@@ -4,32 +4,36 @@ if (isset($_POST['submit']))
 {
 	$data_missing = array();
 	
-	if (empty($_POST['codReg']))
+	if (empty($_POST['codSis']))
 	{
-		$data_missing[] = 'codReg';
+		$data_missing[] = 'codSis';
 	}
 	else
 	{
-		$codReg = trim($_POST['codReg']);
+		$codSis = trim($_POST['codSis']);
 	}
-	if (empty($_POST['descricao']))
+	if (empty($_POST['nome']))
 	{
-		$data_missing[] = 'descricao';
+		$data_missing[] = 'nome';
 	}
 	else
 	{
-		$descricao = trim($_POST['descricao']);
+		$nome = trim($_POST['nome']);
 	}
 	
 	if (empty($data_missing))
 	{
 		require_once('mysqli_connect.php');
 		
-		$query = "INSERT INTO Regiao VALUES (?, ?)";
+		echo '<script language="javascript">';
+		echo 'alert("message successfully sent")';
+		echo '</script>';
+		
+		$query = "UPDATE Sistema SET nome=? WHERE codSis=?";
 		
 		$stmt = mysqli_prepare($dbc, $query);
 		
-		mysqli_stmt_bind_param($stmt, "is", $codReg, $descricao);
+		mysqli_stmt_bind_param($stmt, "si", $nome, $codSis);
 		
 		mysqli_stmt_execute($stmt);
 		
@@ -37,7 +41,7 @@ if (isset($_POST['submit']))
 		
 		if ($affected_rows == 1)
 		{
-			echo 'Região cadastrada';
+			echo 'Sistema atualizado';
 			
 			mysqli_stmt_close($stmt);
 			

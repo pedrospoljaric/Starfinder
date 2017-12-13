@@ -4,32 +4,24 @@ if (isset($_POST['submit']))
 {
 	$data_missing = array();
 	
-	if (empty($_POST['codReg']))
+	if (empty($_POST['codEsp']))
 	{
-		$data_missing[] = 'codReg';
+		$data_missing[] = 'codEsp';
 	}
 	else
 	{
-		$codReg = trim($_POST['codReg']);
-	}
-	if (empty($_POST['descricao']))
-	{
-		$data_missing[] = 'descricao';
-	}
-	else
-	{
-		$descricao = trim($_POST['descricao']);
+		$codEsp = trim($_POST['codEsp']);
 	}
 	
 	if (empty($data_missing))
 	{
 		require_once('mysqli_connect.php');
 		
-		$query = "INSERT INTO Regiao VALUES (?, ?)";
+		$query = "DELETE FROM Especie WHERE codEsp=?";
 		
 		$stmt = mysqli_prepare($dbc, $query);
 		
-		mysqli_stmt_bind_param($stmt, "is", $codReg, $descricao);
+		mysqli_stmt_bind_param($stmt, "i", $codEsp);
 		
 		mysqli_stmt_execute($stmt);
 		
@@ -37,7 +29,7 @@ if (isset($_POST['submit']))
 		
 		if ($affected_rows == 1)
 		{
-			echo 'Região cadastrada';
+			echo 'Espécie excluída';
 			
 			mysqli_stmt_close($stmt);
 			

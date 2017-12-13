@@ -65,7 +65,20 @@
 	</section>
 	
 	<section id="opcoes">
-	Lista de selects disponíveis vem aqui.
+	
+		<div onclick="changeSelect(1)">• Nomes dos astros que estão no Setor Calamari e orbitam o planeta Kashyyyk<br></div>
+		<div onclick="changeSelect(2)">• Nomes dos astros que orbitam a estrela Siskeen<br></div>
+		<div onclick="changeSelect(3)">• Nomes das estruturas dominadas pelo Império Galáctico<br></div>
+		<div onclick="changeSelect(4)">• Nomes dos astros que são habitados pela espécie Humana<br></div>
+		<div onclick="changeSelect(5)">• Nomes dos astros presentes no Sistema de Calamari<br></div>
+		<div onclick="changeSelect(6)">• Estrelas que pertencem a mesma região que os Mon Calamari habitam <br></div>
+		<div onclick="changeSelect(7)">• Encontramos um erro no mapa galáctico. Encontre quais planetas estão orbitando uma estrela (ou remanescente) mas não constam como pertencentes ao sistema da estrela<br></div>
+		<div onclick="changeSelect(8)">• Astros que estão no setor Corusca e suas órbitas e quantidades de orbitas, ordenando por tipo de lugar<br></div>
+		<div onclick="changeSelect(9)">• Contabilizar a proporcao de remanescentes de estrela por regiao da galáxia, ordenando pelo codRegiao<br></div>
+		<div onclick="changeSelect(10)">• Listas as Organizações que participaram de conflitos que duraram mais de uma década, ordenando por anos de conflito e exibindo somente o conflito que levou mais tempo<br></div>
+		<div onclick="changeSelect(11)">• Foi encontrado outro erro no mapa galáctico. Alguns planetas possuem outros planetas orbitando eles, não rola isso na física. exibir os astros e quantidade de satelites, planetas e outros corpos que orbitam ele<br></div>
+		<div onclick="changeSelect(12)">• Consultar total de astros nas regiões, especificando quantos de cada tipo de astro, o total e somente para regiões com menos de 5 astros cadatrados, ordenando da maior total de astros pro menor<br></div>
+	
 	</section>
 	
 	<section id="mainSelect">
@@ -95,10 +108,7 @@
 			</p>
 		</form>
 		<form action="_php/addedInfoConflito.php" method="post" id="conflitoForm">
-			<b>Adicionar Conflito</b>			
-			<p>Código:
-			<input type="text" name="codConf" size="30" value=""</>
-			</p>
+			<b>Adicionar Conflito</b>
 			<p>Nome:
 			<input type="text" name="nome" size="30" value=""</>
 			</p>
@@ -144,10 +154,7 @@
 			</p>
 		</form>
 		<form action="_php/addedInfoOrganizacao.php" method="post" id="organizacaoForm">
-			<b>Adicionar Organização</b>			
-			<p>Código:
-			<input type="text" name="codOrg" size="30" value=""</>
-			</p>
+			<b>Adicionar Organização</b>
 			<p>Nome:
 			<input type="text" name="nome" size="30" value=""</>
 			</p>
@@ -190,10 +197,170 @@
 		</form>
 	</section>
 	<section id="mainUpdate">
-	Id e Campos para modificação vêm aqui.
+		<form action="_php/updatedInfoAstro.php" method="post" id="astroUpdateForm">
+			<b>Atualizar Astro</b>			
+			<p><b>Código:</b>
+			<input type="text" name="codAst" size="30" value=""</>
+			</p>
+			<p>Nome:
+			<input type="text" name="nome" size="30" value=""</>
+			</p>
+			<p>Composição:
+			<input type="text" name="composicao" size="30" value=""</>
+			</p>
+			<p>Distância:
+			<input type="text" name="dist" size="30" value=""</>
+			</p>
+			<p>Código do setor:
+			<input type="text" name="codSet" size="30" value=""</>
+			</p>
+			<p>
+				<input type="submit" name="submit" value="Atualizar" />
+			</p>
+		</form>
+		<form action="_php/updatedInfoConflito.php" method="post" id="conflitoUpdateForm">
+			<b>Atualizar Conflito</b>			
+			<p><b>Código:</b>
+			<input type="text" name="codConf" size="30" value=""</>
+			</p>
+			<p>Nome:
+			<input type="text" name="nome" size="30" value=""</>
+			</p>
+			<p>Início:
+			<input type="text" name="data_inicio" size="30" value=""</>
+			</p>
+			<p>Fim:
+			<input type="text" name="data_fim" size="30" value=""</>
+			</p>
+			<p>Descrição:
+			<input type="text" name="descricao" size="30" value=""</>
+			</p>
+			<p>Código do lugar:
+			<input type="text" name="codLug" size="30" value=""</>
+			</p>
+			<p>
+				<input type="submit" name="submit" value="Atualizar" />
+			</p>
+		</form>
+		<form action="_php/updatedInfoEspecie.php" method="post" id="especieUpdateForm">
+			<b>Atualizar Espécie</b>
+			<p><b>Código:</b>
+			<input type="text" name="codEsp" size="30" value=""</>
+			</p>
+			<p>Nome científico:
+			<input type="text" name="nome_cientifico" size="30" value=""</>
+			</p>
+			<p>Nome usual:
+			<input type="text" name="nome_usual" size="30" value=""</>
+			</p>
+			<p>Descrição:
+			<input type="text" name="descricao" size="30" value=""</>
+			</p>
+			<p>
+				<input type="submit" name="submit" value="Atualizar" />
+			</p>
+		</form>
+		<form action="_php/updatedInfoOrganizacao.php" method="post" id="organizacaoUpdateForm">
+			<b>Atualizar Organização</b>			
+			<p><b>Código:</b>
+			<input type="text" name="codOrg" size="30" value=""</>
+			</p>
+			<p>Nome:
+			<input type="text" name="nome" size="30" value=""</>
+			</p>
+			<p>Descrição:
+			<input type="text" name="descricao" size="30" value=""</>
+			</p>
+			<p>Data de criação:
+			<input type="text" name="dtCriacao" size="30" value=""</>
+			</p>
+			<p>Data de dissolução:
+			<input type="text" name="dtDissolucao" size="30" value=""</>
+			</p>
+			<p>
+				<input type="submit" name="submit" value="Atualizar" />
+			</p>
+		</form>
+		<form action="_php/updatedInfoRegiao.php" method="post" id="regiaoUpdateForm">
+			<b>Atualizar Região</b>			
+			<p><b>Código:</b>
+			<input type="text" name="codReg" size="30" value=""</>
+			</p>
+			<p>Descrição:
+			<input type="text" name="descricao" size="30" value=""</>
+			</p>
+			<p>
+				<input type="submit" name="submit" value="Atualizar" />
+			</p>
+		</form>
+		<form action="_php/updatedInfoSistema.php" method="post" id="sistemaUpdateForm">
+			<b>Atualizar Sistema</b>			
+			<p><b>Código:</b>
+			<input type="text" name="codSis" size="30" value=""</>
+			</p>
+			<p>Nome:
+			<input type="text" name="nome" size="30" value=""</>
+			</p>
+			<p>
+				<input type="submit" name="submit" value="Atualizar" />
+			</p>
+		</form>
 	</section>
 	<section id="mainDelete">
-	Id vem aqui.
+		<form action="_php/deletedInfoAstro.php" method="post" id="astroDeleteForm">
+			<b>Excluir Astro</b>			
+			<p><b>Código:</b>
+			<input type="text" name="codAst" size="30" value=""</>
+			</p>
+			<p>
+				<input type="submit" name="submit" value="Excluir" />
+			</p>
+		</form>
+		<form action="_php/deletedInfoConflito.php" method="post" id="conflitoDeleteForm">
+			<b>Excluir Conflito</b>			
+			<p><b>Código:</b>
+			<input type="text" name="codConf" size="30" value=""</>
+			</p>
+			<p>
+				<input type="submit" name="submit" value="Excluir" />
+			</p>
+		</form>
+		<form action="_php/deletedInfoEspecie.php" method="post" id="especieDeleteForm">
+			<b>Excluir Espécie</b>
+			<p><b>Código:</b>
+			<input type="text" name="codEsp" size="30" value=""</>
+			</p>
+			<p>
+				<input type="submit" name="submit" value="Excluir" />
+			</p>
+		</form>
+		<form action="_php/deletedInfoOrganizacao.php" method="post" id="organizacaoDeleteForm">
+			<b>Excluir Organização</b>			
+			<p><b>Código:</b>
+			<input type="text" name="codOrg" size="30" value=""</>
+			</p>
+			<p>
+				<input type="submit" name="submit" value="Excluir" />
+			</p>
+		</form>
+		<form action="_php/deletedInfoRegiao.php" method="post" id="regiaoDeleteForm">
+			<b>Excluir Região</b>			
+			<p><b>Código:</b>
+			<input type="text" name="codReg" size="30" value=""</>
+			</p>
+			<p>
+				<input type="submit" name="submit" value="Excluir" />
+			</p>
+		</form>
+		<form action="_php/deletedInfoSistema.php" method="post" id="sistemaDeleteForm">
+			<b>Excluir Sistema</b>			
+			<p><b>Código:</b>
+			<input type="text" name="codSis" size="30" value=""</>
+			</p>
+			<p>
+				<input type="submit" name="submit" value="Excluir" />
+			</p>
+		</form>
 	</section>
 	
 </section> 

@@ -12,24 +12,16 @@ if (isset($_POST['submit']))
 	{
 		$codReg = trim($_POST['codReg']);
 	}
-	if (empty($_POST['descricao']))
-	{
-		$data_missing[] = 'descricao';
-	}
-	else
-	{
-		$descricao = trim($_POST['descricao']);
-	}
 	
 	if (empty($data_missing))
 	{
 		require_once('mysqli_connect.php');
 		
-		$query = "INSERT INTO Regiao VALUES (?, ?)";
+		$query = "DELETE FROM Regiao WHERE codReg=?)";
 		
 		$stmt = mysqli_prepare($dbc, $query);
 		
-		mysqli_stmt_bind_param($stmt, "is", $codReg, $descricao);
+		mysqli_stmt_bind_param($stmt, "i", $codReg);
 		
 		mysqli_stmt_execute($stmt);
 		
@@ -37,7 +29,7 @@ if (isset($_POST['submit']))
 		
 		if ($affected_rows == 1)
 		{
-			echo 'Região cadastrada';
+			echo 'Região excluída';
 			
 			mysqli_stmt_close($stmt);
 			

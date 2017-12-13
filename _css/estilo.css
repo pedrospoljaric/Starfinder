@@ -143,10 +143,24 @@ section#opcoes {
 	border: 1px solid black;
 	background-color: white;
 	float: left;
-	width: 400px;
-	height: 245px;
+	width: 360px;
+	height: 205px;
+	
+	padding: 20px;
 	
 	top: 354px;
+	overflow: scroll;
+}
+
+section#opcoes div{
+	color: blue;
+    text-decoration: none;
+	width: 360px;
+}
+section#opcoes div:hover{
+	color: blue;
+    text-decoration: underline;
+	cursor: pointer;
 }
 
 section#mainSelect {
@@ -183,8 +197,10 @@ section#mainUpdate {
 	border: 1px solid black;
 	background-color: white;
 	float: left;
-	width: 790px;
-	height: 497px;
+	width: 750px;
+	height: 457px;
+	
+	padding: 20px;
 	
 	left: 490px;
 }
@@ -194,8 +210,10 @@ section#mainDelete {
 	border: 1px solid black;
 	background-color: white;
 	float: left;
-	width: 790px;
-	height: 497px;
+	width: 750px;
+	height: 457px;
+	
+	padding: 20px;
 	
 	left: 490px;
 }

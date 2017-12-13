@@ -12,6 +12,12 @@ function selectTable(tableName)
 	monica.data = '_php/getInfo'+selectedTab+'.php';
 }
 
+function changeSelect(id)
+{
+	var monica = document.getElementById("monica");
+	monica.data = '_php/selectPronto'+id+'.php';
+}
+
 function selectOption(opt)
 {
 	hideAllSections();
@@ -27,13 +33,25 @@ function selectOption(opt)
 	}
 	if (opt == 'Insert')
 	{
-		hideAllInsertForms();
+		hideAllForms();
 		var tab = document.getElementById(selectedTab+"Form");
+		tab.style.display = 'block';
+	}
+	if (opt == 'Update')
+	{
+		hideAllForms();
+		var tab = document.getElementById(selectedTab+"UpdateForm");
+		tab.style.display = 'block';
+	}
+	if (opt == 'Delete')
+	{
+		hideAllForms();
+		var tab = document.getElementById(selectedTab+"DeleteForm");
 		tab.style.display = 'block';
 	}
 }
 
-function hideAllInsertForms()
+function hideAllForms()
 {
 	document.getElementById("astroForm").style.display = 'none';
 	document.getElementById("conflitoForm").style.display = 'none';
@@ -41,6 +59,20 @@ function hideAllInsertForms()
 	document.getElementById("organizacaoForm").style.display = 'none';
 	document.getElementById("regiaoForm").style.display = 'none';
 	document.getElementById("sistemaForm").style.display = 'none';
+	
+	document.getElementById("astroUpdateForm").style.display = 'none';
+	document.getElementById("conflitoUpdateForm").style.display = 'none';
+	document.getElementById("especieUpdateForm").style.display = 'none';
+	document.getElementById("organizacaoUpdateForm").style.display = 'none';
+	document.getElementById("regiaoUpdateForm").style.display = 'none';
+	document.getElementById("sistemaUpdateForm").style.display = 'none';
+	
+	document.getElementById("astroDeleteForm").style.display = 'none';
+	document.getElementById("conflitoDeleteForm").style.display = 'none';
+	document.getElementById("especieDeleteForm").style.display = 'none';
+	document.getElementById("organizacaoDeleteForm").style.display = 'none';
+	document.getElementById("regiaoDeleteForm").style.display = 'none';
+	document.getElementById("sistemaDeleteForm").style.display = 'none';
 }
 
 function changeImg()
