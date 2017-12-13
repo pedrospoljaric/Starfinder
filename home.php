@@ -351,9 +351,9 @@ require_once('_php/mysqli_connect.php');
 			<p><b>Código:</b>
 			<select name="codAst">
 			<?php
-				$result = $magus->execute("SELECT * FROM Astro ORDER BY nome ASC", null);
+				$result = $magus->execute("SELECT * FROM VisaoLugar WHERE tipoLugar NOT IN ('Sistema', 'Regiao') ORDER BY nome ASC", null);
 				foreach($result as $row){
-					echo '<option value="'.$row['codAst'].'">'.$row['nome'].'</option>';
+					echo '<option value="'.$row['codLug'].'">'.$row['nome'].' ('.$row['tipoLugar'].')</option>';
 				}
 			?>
 			</select>
